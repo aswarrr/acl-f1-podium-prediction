@@ -16,6 +16,8 @@ Use [Formula 1 World Championship (1950–2024)](https://www.kaggle.com/datasets
 
 On Kaggle, attach that dataset as a notebook input, enable Internet if `shap` or `lime` must be installed, then use **Save & Run All**. The notebook finds the attached folder automatically. No path cell needs editing. The Kaggle notebook version should be made public and checked from a signed-out browser.
 
+To stage a clean copy for Kaggle's API, run `python scripts/prepare_kaggle.py YOUR_KAGGLE_USERNAME`. This writes an output-free notebook and `kernel-metadata.json` to the ignored `kaggle_upload/` folder. With Kaggle API credentials configured locally and the Kaggle CLI installed, run `kaggle kernels push -p kaggle_upload` (without `--no-run`), then check that the Kaggle run succeeds and its public URL loads while signed out. The staged metadata attaches the source dataset and enables Internet. See [Kaggle's kernel CLI documentation](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md).
+
 For a local run, place the 14 CSVs in `data/raw/` or set `F1_DATA_DIR` to the folder containing them. The raw CSVs are ignored by Git and are never rewritten. On Windows with `uv`:
 
 ```powershell

@@ -7,3 +7,4 @@ outputs/clean/
 outputs/model.joblib
 run.log
 notebook_run.log
+kaggle_upload/
