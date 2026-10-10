@@ -1,0 +1,5 @@
+step,rows,removed
+Raw results,26759,0
+Exclude Indianapolis 500,26354,405
+Exclude non-starters,24615,1739
+Resolve shared drives,24551,64

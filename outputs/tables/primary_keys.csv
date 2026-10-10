@@ -1,0 +1,15 @@
+table,key,null_keys,duplicate_keys
+circuits,circuitId,0,0
+constructors,constructorId,0,0
+constructor_results,constructorResultsId,0,0
+constructor_standings,constructorStandingsId,0,0
+drivers,driverId,0,0
+driver_standings,driverStandingsId,0,0
+races,raceId,0,0
+results,resultId,0,0
+qualifying,qualifyId,0,0
+lap_times,raceId+driverId+lap,0,0
+pit_stops,raceId+driverId+stop,0,0
+sprint_results,resultId,0,0
+seasons,year,0,0
+status,statusId,0,0

@@ -1,0 +1,7 @@
+group,fields,reason,cutoff
+Grid,"grid_position, pitlane_start",Grid-position EDA shows steep podium gradient; pit-lane zero is separate.,pre-race or strictly earlier races
+Qualifying,"qual_position, grid_delta, qual_missing",Qualifying and grid can differ after penalties; coverage measured by year.,pre-race or strictly earlier races
+Driver form,"driver_prior_starts, driver_podium_last5, driver_finish_last5",Earlier-driver podium/finish histories may capture current form.,pre-race or strictly earlier races
+Constructor form,"constructor_prior_races, constructor_podium_last5, constructor_finish_last5",Prior car/team race outcomes may capture competitiveness.,pre-race or strictly earlier races
+Standings,"driver_prev_rank, driver_prev_points, constructor_prev_rank, constructor_prev_points, driver_standing_missing, constructor_standing_missing","Only latest previous-round standing, never same-race standing.",pre-race or strictly earlier races
+Context,"qualifying_field_size, age_years, race_round, is_home","Field size, age, round and home status are known before lights out.",pre-race or strictly earlier races

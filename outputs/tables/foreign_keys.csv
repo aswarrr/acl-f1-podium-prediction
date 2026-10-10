@@ -1,0 +1,24 @@
+relation,null_references,orphan_references
+results.raceId -> races.raceId,0,0
+results.driverId -> drivers.driverId,0,0
+results.constructorId -> constructors.constructorId,0,0
+results.statusId -> status.statusId,0,0
+races.circuitId -> circuits.circuitId,0,0
+races.year -> seasons.year,0,0
+qualifying.raceId -> races.raceId,0,0
+qualifying.driverId -> drivers.driverId,0,0
+qualifying.constructorId -> constructors.constructorId,0,0
+driver_standings.raceId -> races.raceId,0,0
+driver_standings.driverId -> drivers.driverId,0,0
+constructor_standings.raceId -> races.raceId,0,0
+constructor_standings.constructorId -> constructors.constructorId,0,0
+constructor_results.raceId -> races.raceId,0,0
+constructor_results.constructorId -> constructors.constructorId,0,0
+sprint_results.raceId -> races.raceId,0,0
+sprint_results.driverId -> drivers.driverId,0,0
+sprint_results.constructorId -> constructors.constructorId,0,0
+sprint_results.statusId -> status.statusId,0,0
+lap_times.raceId -> races.raceId,0,0
+lap_times.driverId -> drivers.driverId,0,0
+pit_stops.raceId -> races.raceId,0,0
+pit_stops.driverId -> drivers.driverId,0,0

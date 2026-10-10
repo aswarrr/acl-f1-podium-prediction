@@ -1,0 +1,65 @@
+status,category,starts
+Retired,ambiguous,49
+Wheel,ambiguous,11
+Puncture,ambiguous,7
+Tyre,ambiguous,4
+Undertray,ambiguous,4
+Front wing,ambiguous,3
+Rear wing,ambiguous,3
+Damage,ambiguous,2
+Technical,ambiguous,2
+Vibrations,ambiguous,2
+Debris,ambiguous,1
+Seat,ambiguous,1
+Finished,finished,2403
++1 Lap,finished,1178
++2 Laps,finished,208
++3 Laps,finished,24
++4 Laps,finished,6
++6 Laps,finished,2
++8 Laps,finished,2
++5 Laps,finished,1
++7 Laps,finished,1
+Engine,mechanical,79
+Brakes,mechanical,48
+Gearbox,mechanical,40
+Power Unit,mechanical,39
+Suspension,mechanical,25
+Electrical,mechanical,14
+Hydraulics,mechanical,14
+Power loss,mechanical,12
+Oil leak,mechanical,10
+Overheating,mechanical,8
+Mechanical,mechanical,7
+Water pressure,mechanical,7
+Turbo,mechanical,6
+Fuel pressure,mechanical,5
+Battery,mechanical,4
+ERS,mechanical,4
+Electronics,mechanical,4
+Exhaust,mechanical,4
+Water leak,mechanical,4
+Radiator,mechanical,3
+Transmission,mechanical,3
+Wheel nut,mechanical,3
+Clutch,mechanical,2
+Oil pressure,mechanical,2
+Steering,mechanical,2
+Throttle,mechanical,2
+Brake duct,mechanical,1
+Cooling system,mechanical,1
+Differential,mechanical,1
+Driveshaft,mechanical,1
+Drivetrain,mechanical,1
+Fuel leak,mechanical,1
+Fuel pump,mechanical,1
+Spark plugs,mechanical,1
+Water pump,mechanical,1
+Collision,other known,150
+Accident,other known,85
+Collision damage,other known,59
+Disqualified,other known,11
+Spun off,other known,11
+Illness,other known,2
+Excluded,other known,1
+Out of fuel,other known,1

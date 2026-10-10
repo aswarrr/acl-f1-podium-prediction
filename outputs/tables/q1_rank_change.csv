@@ -1,0 +1,4 @@
+period_a,period_b,shared_circuits,spearman_rho
+pre-2014,hybrid 2014-2021,16,-0.0445111696248371
+hybrid 2014-2021,ground effect 2022-2024,17,-0.19883609934545163
+pre-2014,ground effect 2022-2024,17,-0.23678096351663785

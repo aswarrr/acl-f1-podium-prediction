@@ -1,0 +1,15 @@
+table,rows,columns,sentinels
+lap_times,589081,6,0
+driver_standings,34863,7,0
+results,26759,18,122887
+constructor_standings,13391,7,0
+constructor_results,12625,5,12608
+pit_stops,11371,7,0
+qualifying,10494,9,11668
+races,1125,18,11349
+drivers,861,9,1559
+sprint_results,360,16,73
+constructors,212,5,0
+status,139,2,0
+circuits,77,9,0
+seasons,75,2,0
