@@ -14,6 +14,8 @@ SLUG = "formula-1-podium-prediction-milestone-1"
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("username", help="Your Kaggle username (not an API token)")
+    parser.add_argument("--slug", default=SLUG,
+                        help="Notebook slug; use an existing slug to update that notebook")
     args = parser.parse_args()
 
     stage = ROOT / "kaggle_upload"
@@ -27,7 +29,7 @@ def main():
     nbformat.write(notebook, stage / source.name)
 
     metadata = {
-        "id": f"{args.username}/{SLUG}",
+        "id": f"{args.username}/{args.slug}",
         "title": "Formula 1 Podium Prediction Milestone 1",
         "code_file": source.name,
         "language": "python",
@@ -43,7 +45,7 @@ def main():
     (stage / "kernel-metadata.json").write_text(
         json.dumps(metadata, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"Staged {stage}\nKaggle URL: https://www.kaggle.com/code/{args.username}/{SLUG}")
+    print(f"Staged {stage}\nKaggle URL: https://www.kaggle.com/code/{args.username}/{args.slug}")
 
 
 if __name__ == "__main__":

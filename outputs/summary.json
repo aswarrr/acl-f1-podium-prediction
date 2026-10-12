@@ -368,7 +368,7 @@
       {
         "family": "Random forest",
         "parameters": "{'n_estimators': 180, 'min_samples_leaf': 3, 'max_features': 'sqrt', 'n_jobs': -1, 'random_state': 42}",
-        "threshold": 0.3082110482110482,
+        "threshold": 0.30821104821104817,
         "roc_auc": 0.9254445875450442,
         "pr_auc": 0.6927644680477189,
         "f1": 0.7159533073929961,

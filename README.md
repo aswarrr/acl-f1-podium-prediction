@@ -2,6 +2,8 @@
 
 This repository contains a new, self-contained, run-all notebook and its analytical PDF report. It predicts whether a **race starter** finishes in the top three using only information available after qualifying and before the main race. The raw 1950–2024 relational dataset is audited and used for the three data-engineering questions; modeling uses 2003–2024 to avoid the severe pre-2003 qualifying gap.
 
+The notebook now follows the course lab sequence: **Lab 1** loads, inspects, cleans, and plots DataFrames; **Lab 2** fits and evaluates classifiers; **Lab 3** adds a one-hidden-layer neural network; and **Lab 4** explains predictions with SHAP and LIME. Numbered, smaller cells show intermediate tables and explain the F1-specific historical joins. The model settings and reported results are unchanged.
+
 ## Files
 
 - `f1_podium_milestone1.ipynb`: submission notebook; all analysis, training, explanations and inference run top to bottom.
@@ -14,9 +16,9 @@ This repository contains a new, self-contained, run-all notebook and its analyti
 
 Use [Formula 1 World Championship (1950–2024)](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020), which provides these 14 CSVs: `circuits`, `constructors`, `constructor_results`, `constructor_standings`, `drivers`, `driver_standings`, `races`, `results`, `qualifying`, `lap_times`, `pit_stops`, `sprint_results`, `seasons`, and `status`.
 
-On Kaggle, attach that dataset as a notebook input, enable Internet if `shap` or `lime` must be installed, then use **Save & Run All**. The notebook finds the attached folder automatically. No path cell needs editing. The Kaggle notebook version should be made public and checked from a signed-out browser.
+On Kaggle, attach that dataset as a notebook input, enable Internet if `shap` or `lime` must be installed, then use **Save & Run All**. The notebook finds the attached folder automatically. No path cell needs editing. You can keep the Kaggle notebook private while exploring the results.
 
-To stage a clean copy for Kaggle's API, run `python scripts/prepare_kaggle.py YOUR_KAGGLE_USERNAME`. This writes an output-free notebook and `kernel-metadata.json` to the ignored `kaggle_upload/` folder. With Kaggle API credentials configured locally and the Kaggle CLI installed, run `kaggle kernels push -p kaggle_upload` (without `--no-run`), then check that the Kaggle run succeeds and its public URL loads while signed out. The staged metadata attaches the source dataset and enables Internet. See [Kaggle's kernel CLI documentation](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md).
+To stage a clean copy for Kaggle's API, run `python scripts/prepare_kaggle.py YOUR_KAGGLE_USERNAME`. Add `--slug EXISTING_NOTEBOOK_SLUG` to update an existing Kaggle notebook instead of creating a new one. This writes an output-free notebook and `kernel-metadata.json` to the ignored `kaggle_upload/` folder. With Kaggle API credentials configured locally and the Kaggle CLI installed, run `kaggle kernels push -p kaggle_upload` (without `--no-run`), then check that the Kaggle run succeeds and its output files appear. The staged metadata attaches the source dataset and enables Internet. See [Kaggle's kernel CLI documentation](https://github.com/Kaggle/kaggle-cli/blob/main/docs/kernels.md).
 
 For a local run, place the 14 CSVs in `data/raw/` or set `F1_DATA_DIR` to the folder containing them. The raw CSVs are ignored by Git and are never rewritten. On Windows with `uv`:
 
@@ -32,7 +34,7 @@ Select the `F1 ACL` kernel and **Run All** on `f1_podium_milestone1.ipynb`. To r
 .venv\Scripts\python.exe report\build_report.py
 ```
 
-The Python source can also be run directly as a pipeline. `jupytext --to ipynb f1_podium_milestone1.py` rebuilds the notebook source, but the submitted notebook should be executed and saved with outputs after the last edit.
+The Python source can also be run directly. `jupytext --to ipynb f1_podium_milestone1.py` rebuilds the notebook source, but the Kaggle notebook should be executed and saved with outputs after the last edit.
 
 ## Decision log
 
@@ -43,6 +45,6 @@ The Python source can also be run directly as a pipeline. `jupytext --to ipynb f
 - **Status mapping:** only explicitly named component/subsystem failures count as mechanical; ambiguous labels remain in the race-start denominator and are shown separately.
 - **Interpretation:** home-race estimates and model explanations are associations/model behavior, not causal effects.
 
-## Submission
+## Original milestone submission guidance
 
-The milestone brief calls for an accessible Kaggle notebook link, an accessible GitHub repository link, and the PDF report through its specified form by **October 18, 2026, 11:59 PM**. Verify both links while signed out and confirm the Kaggle saved version has completed a clean run.
+The milestone brief calls for an accessible Kaggle notebook link, an accessible GitHub repository link, and the PDF report through its specified form by **October 18, 2026, 11:59 PM**. This repository does not submit anything; you can run and inspect the notebook privately.

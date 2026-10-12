@@ -147,7 +147,7 @@ The log/mean experiment changes how missing previous-points counts are filled. T
 | Standings | 15 | 0.722 | 0.712 | 0.001 |
 | Context | 17 | 0.723 | 0.697 | 0.001 |
 
-Each row refits the selected family with the same settings and removes one group at a time. A negative drop means validation ranking improved when the group was removed; this is evidence about this fitted pipeline, not a universal claim about that information.
+Each row refits the selected family with the same settings and removes one group at a time. A negative drop means validation ranking improved when the group was removed; this is evidence about this fitted model, not a universal claim about that information.
 
 Removing Driver form caused the largest validation PR-AUC decrease (0.033). The ablation plot also makes any redundant or harmful group visible; a near-zero change is not proof that the underlying information is unimportant in all models.
 
@@ -157,7 +157,7 @@ Removing Driver form caused the largest validation PR-AUC decrease (0.033). The 
 
 Permutation importance ranks qual_position, driver_prev_rank, driver_prior_starts highest by validation PR-AUC decrease. Mean absolute SHAP values on a bounded validation sample highlight qual_position, driver_prev_points, driver_prev_rank. These methods can split importance differently among correlated grid, qualifying, standings and form fields. Neither establishes that changing a field causes a podium.
 
-![Figure 12. Global permutation importance for the selected complete pipeline.](../outputs/figures/17_permutation_importance.png)
+![Figure 12. Global permutation importance for the selected model.](../outputs/figures/17_permutation_importance.png)
 
 ![Figure 13. Global mean absolute SHAP values on validation rows.](../outputs/figures/18_shap_global.png)
 
@@ -173,7 +173,7 @@ For this case, SHAP's largest upward contributions are driver_podium_last5 (+0.0
 
 ## 6. Inference and limits
 
-The notebook's predict_podium(record) accepts only named engineered pre-race fields and applies the frozen training-fitted pipeline and validation threshold. A complete record returned probability 8.5% and label 0; with qualifying position, grid change and previous driver points omitted, it returned 17.9% and label 0. An unexpected or post-race field is rejected.
+The notebook's predict_podium(record) accepts only named engineered pre-race fields and applies the frozen training-fitted preprocessing and model, plus the validation threshold. A complete record returned probability 8.5% and label 0; with qualifying position, grid change and previous driver points omitted, it returned 17.9% and label 0. An unexpected or post-race field is rejected.
 
 Limitations include pre-2003 qualifying drift, rule and car changes between train/validation and the 2022-2024 test era, constructor-identity resets at renames, uncertain mechanical-status labels, small home/front-row subgroups, class imbalance and the fact that the model is evaluated on actual starters. A genuine future deployment must reconstruct history only from races already completed at its cutoff.
 

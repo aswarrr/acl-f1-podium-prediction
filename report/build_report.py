@@ -254,7 +254,7 @@ table(["Removed group","Features left","Validation PR-AUC","F1","PR-AUC drop"],
        for _,r in ab.iterrows()],widths=[4.2*cm,2.9*cm,3.4*cm,2.2*cm,3.7*cm])
 p("Each row refits the selected family with the same settings and removes one group at a time. A negative "
   "drop means validation ranking improved when the group was removed; this is evidence about this fitted "
-  "pipeline, not a universal claim about that information.")
+  "model, not a universal claim about that information.")
 largest=ab.iloc[1:].sort_values("delta_pr_auc",ascending=False).iloc[0]
 p(f"Removing {largest['removed']} caused the largest validation PR-AUC decrease ({num(largest['delta_pr_auc'])}). "
   "The ablation plot also makes any redundant or harmful group visible; a near-zero change is not proof "
@@ -268,7 +268,7 @@ shap=", ".join(r["feature"] for r in x["top_shap"][:3])
 p(f"Permutation importance ranks {perm} highest by validation PR-AUC decrease. Mean absolute SHAP values on a "
   f"bounded validation sample highlight {shap}. These methods can split importance differently among correlated "
   "grid, qualifying, standings and form fields. Neither establishes that changing a field causes a podium.")
-fig("17_permutation_importance","Figure 12. Global permutation importance for the selected complete pipeline.")
+fig("17_permutation_importance","Figure 12. Global permutation importance for the selected model.")
 fig("18_shap_global","Figure 13. Global mean absolute SHAP values on validation rows.")
 
 page(); h2("One prediction")
@@ -286,7 +286,7 @@ fig("21_lime_local","Figure 15. LIME's local approximation around the same pre-r
 h1("6. Inference and limits")
 inf=m["inference"]
 p(f"The notebook's predict_podium(record) accepts only named engineered pre-race fields and applies the frozen "
-  f"training-fitted pipeline and validation threshold. A complete record returned probability "
+  f"training-fitted preprocessing and model, plus the validation threshold. A complete record returned probability "
   f"{pct(inf['complete']['podium_probability'])} and label {inf['complete']['predicted_podium']}; "
   f"with qualifying position, grid change and previous driver points omitted, it returned "
   f"{pct(inf['partial']['podium_probability'])} and label {inf['partial']['predicted_podium']}. "
